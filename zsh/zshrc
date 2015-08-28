@@ -80,3 +80,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dualscreen="~/.screenlayout/dual_screen.sh"
 alias singlescreen="~/.screenlayout/single_screen.sh"
+alias adb=~/Android/Sdk/platform-tools/adb
+alias gradle=./gradlew
+alias proj="cd ~/projects"
+alias android="~/Android/Sdk/tools/android"
