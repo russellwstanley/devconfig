@@ -19,4 +19,8 @@ set tabstop=4
 set shiftwidth=4 
 set expandtab
 
-set clipboard=unnamedplus
+"ctrlp stuff
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+set wildignore+=*/.git,*.class,*.pyc,*.swp
+let g:ctrlp_cmd = 'CtrlPBuffer'
+
