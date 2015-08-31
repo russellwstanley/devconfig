@@ -1,0 +1,22 @@
+"FileType support
+set filetype=on
+filetype plugin on
+filetype indent on
+
+
+set number
+set background=dark
+colorscheme slate
+
+"moving between windows
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
+set smartindent
+set tabstop=4 
+set shiftwidth=4 
+set expandtab
+
+set clipboard=unnamedplus
