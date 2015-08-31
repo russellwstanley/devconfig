@@ -24,3 +24,5 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/.git,*.class,*.pyc,*.swp
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
+"neocomplete
+let g:neocomplete#enable_at_startup = 1
