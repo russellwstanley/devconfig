@@ -21,7 +21,7 @@ set expandtab
 
 "ctrlp stuff
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*/.git,*.class,*.pyc,*.swp
+set wildignore+=**/*.git,**/*.class,**/*.pyc,**/*.swp,**/*jar,**/*.zip
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
 "neocomplete
