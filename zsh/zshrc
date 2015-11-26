@@ -83,4 +83,5 @@ alias singlescreen="~/.screenlayout/single_screen.sh"
 alias adb=~/Android/Sdk/platform-tools/adb
 alias gradle=./gradlew
 alias proj="cd ~/projects"
+alias raproj="cd ~/projects/radioactive"
 alias android="~/Android/Sdk/tools/android"
