@@ -26,3 +26,6 @@ let g:ctrlp_cmd = 'CtrlPBuffer'
 
 "neocomplete
 let g:neocomplete#enable_at_startup = 1
+
+set foldmethod=marker
+command Datefold r!echo "{{{ $(date) \n\n}}}"
