@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="muse"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -81,7 +81,9 @@ source $ZSH/oh-my-zsh.sh
 alias dualscreen="~/.screenlayout/dual_screen.sh"
 alias singlescreen="~/.screenlayout/single_screen.sh"
 alias adb=~/Android/Sdk/platform-tools/adb
+alias suadb="sudo ~/Android/Sdk/platform-tools/adb"
 alias gradle=./gradlew
 alias proj="cd ~/projects"
 alias raproj="cd ~/projects/radioactive"
 alias android="~/Android/Sdk/tools/android"
+alias rawcurl="curl -iv --raw"
