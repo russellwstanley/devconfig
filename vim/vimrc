@@ -32,3 +32,4 @@ au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 set foldmethod=marker
 command Datefold r!echo "{{{ $(date) \n\n}}}"
+let g:auto_save = 1
