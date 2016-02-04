@@ -45,7 +45,7 @@ ZSH_THEME="muse"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fabric docker gradle)
+plugins=(fabric docker gradle)
 
 # User configuration
 
@@ -78,6 +78,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+function gcm () {
+   git commit -m "$*"
+}
 alias dualscreen="~/.screenlayout/dual_screen.sh"
 alias singlescreen="~/.screenlayout/single_screen.sh"
 alias adb=~/Android/Sdk/platform-tools/adb
@@ -88,3 +91,5 @@ alias raproj="cd ~/projects/radioactive"
 alias android="~/Android/Sdk/tools/android"
 alias rawcurl="curl -iv --raw"
 alias horn="mplayer ~/Dropbox/air_horn.mp3"
+alias gv="gvim"
+
