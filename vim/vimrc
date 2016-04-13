@@ -39,10 +39,11 @@ let g:ctrlp_cmd = 'CtrlPBuffer'
 
 "neocomplete
 let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_auto_select = 1
 
 " yaml indentation
 au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 set foldmethod=marker
-command Datefold r!echo "{{{ $(date) \n\n}}}"
 let g:auto_save = 1
+command Datefold r!echo "{{{ $(date) \n\n}}}"
