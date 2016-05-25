@@ -50,7 +50,7 @@ let g:auto_save = 1
 
 let g:mwIgnoreCase = 1
 autocmd VimEnter * 2Mark!done
-
+autocmd VimEnter * 3Mark!blok
 autocmd VimEnter * 4Mark!todo
 autocmd VimEnter * 1Mark!##.*
 
