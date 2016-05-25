@@ -9,6 +9,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'Mark'
 
 
 "FileType support
@@ -46,4 +47,12 @@ au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 set foldmethod=marker
 let g:auto_save = 1
+
+let g:mwIgnoreCase = 1
+autocmd VimEnter * 2Mark!done
+
+autocmd VimEnter * 4Mark!todo
+autocmd VimEnter * 1Mark!##.*
+
 command Datefold r!echo "{{{ $(date) \n\n}}}"
+
