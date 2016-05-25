@@ -52,6 +52,7 @@ let g:mwIgnoreCase = 1
 autocmd VimEnter * 2Mark!done
 
 autocmd VimEnter * 4Mark!todo
+autocmd VimEnter * 1Mark!##.*
 
 command Datefold r!echo "{{{ $(date) \n\n}}}"
 
