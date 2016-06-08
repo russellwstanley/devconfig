@@ -36,7 +36,8 @@ set expandtab
 "ctrlp stuff
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=**/*.git,**/*.class,**/*.pyc,**/*.swp,**/*jar,**/*.zip
-let g:ctrlp_cmd = 'CtrlPBuffer'
+let g:ctrlp_cmd = 'CtrlPLastMode'
+let g:ctrlp_extensions = [ 'mixed', 'line', 'dir']
 
 "neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -50,9 +51,12 @@ let g:auto_save = 1
 
 let g:mwIgnoreCase = 1
 autocmd VimEnter * 2Mark!done
-
+autocmd VimEnter * 3Mark!blok
 autocmd VimEnter * 4Mark!todo
 autocmd VimEnter * 1Mark!##.*
+autocmd VimEnter * 5Mark!action
 
-command Datefold r!echo "{{{ $(date) \n\n}}}"
+command! Workday r!echo "{{{ $(date) \n\ntodo morning emails /coms \ntodo afternoon emails / coms \n\todo review personal notes\n\n}}}"
+
+command! Day r!echo "{{{ $(date) \n\n }}}"
 
