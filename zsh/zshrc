@@ -81,6 +81,10 @@ source $ZSH/oh-my-zsh.sh
 function gcm () {
    git commit -m "$*"
 }
+function rassh () {
+  ssh -i ~/.ssh/keys/radioactive.pem ubuntu@$1
+}
+
 alias dualscreen="~/.screenlayout/dual_screen.sh"
 alias singlescreen="~/.screenlayout/single_screen.sh"
 alias adb=~/Android/Sdk/platform-tools/adb
