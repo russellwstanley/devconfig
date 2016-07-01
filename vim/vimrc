@@ -50,14 +50,18 @@ set foldmethod=marker
 let g:auto_save = 1
 
 let g:mwIgnoreCase = 1
+let g:mwDefaultHighlightingPalette = 'maximum' 
+" let g:mwDefaultHighlightingNum = 9 
 autocmd VimEnter * 2Mark!done
 autocmd VimEnter * 3Mark!blok
 autocmd VimEnter * 4Mark!todo
 autocmd VimEnter * 1Mark!##.*
-autocmd VimEnter * 5Mark!action
+autocmd VimEnter * 5Mark!defer
 autocmd VimEnter * 6Mark!delegate.*\[.*\]
+autocmd VimEnter * 8Mark!projects
+autocmd VimEnter * 50Mark!stuff
 
-command! Workday r!echo "{{{ $(date) \n\ntodo morning emails /coms \ntodo afternoon emails / coms \ntodo review personal notes\n\n}}}"
+command! Workday r!echo "{{{ $(date "+\%a \%b \%e \%Y") \ntodo morning emails /coms \ntodo afternoon emails / coms \ntodo review personal notes\n}}}"
 
-command! Day r!echo "{{{ $(date) \n\n }}}"
+command! Day r!echo "{{{ $(date "+\%a \%b \%e \%Y") \n}}}"
 
