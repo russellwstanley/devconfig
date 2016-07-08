@@ -59,6 +59,7 @@ autocmd VimEnter * 1Mark!##.*
 autocmd VimEnter * 5Mark!defer
 autocmd VimEnter * 6Mark!delegate.*\[.*\]
 autocmd VimEnter * 8Mark!projects
+autocmd VimEnter * 7Mark!open
 autocmd VimEnter * 50Mark!stuff
 
 command! Workday r!echo "{{{ $(date "+\%a \%b \%e \%Y") \ntodo morning emails /coms \ntodo afternoon emails / coms \ntodo review personal notes\n}}}"
