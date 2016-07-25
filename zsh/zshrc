@@ -84,6 +84,31 @@ function gcm () {
 function rassh () {
   ssh -i ~/.ssh/keys/radioactive.pem ubuntu@$1
 }
+function ramplayer() {
+  token=$(ra_streamtoken)
+  mplayer "$1?authtoken=$token"
+}
+
+function tickle() {
+
+   if [ $# -eq 0 ] 
+   then
+       date=$(date "+%F")
+       unixdate=$(date -d $date +%s)
+       tickledir="/home/russell/Dropbox/system/tickle-logs"
+       touch $tickledir/$date
+       for file in $(ls $tickledir)
+       do
+         unixfiledate=$(date -d $file +%s)
+         if [ $unixdate -ge $unixfiledate ]
+         then
+             gvim $tickledir/$file
+         fi
+       done
+   else
+       echo "$1"
+   fi
+}
 
 alias dualscreen="~/.screenlayout/dual_screen.sh"
 alias singlescreen="~/.screenlayout/single_screen.sh"

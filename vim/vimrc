@@ -22,16 +22,24 @@ set number
 set background=dark
 colorscheme slate
 
+set hlsearch
+set incsearch
+
 "moving between windows
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
+map <C-Tab> :tabn <CR>
 
+set ignorecase
 set smartindent
+
 set tabstop=4 
 set shiftwidth=4 
 set expandtab
+
+set smartcase
 
 "ctrlp stuff
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -59,9 +67,10 @@ autocmd VimEnter * 1Mark!##.*
 autocmd VimEnter * 5Mark!defer
 autocmd VimEnter * 6Mark!delegate.*\[.*\]
 autocmd VimEnter * 8Mark!projects
-autocmd VimEnter * 50Mark!stuff
+autocmd VimEnter * 51Mark!open
 
 command! Workday r!echo "{{{ $(date "+\%a \%b \%e \%Y") \ntodo morning emails /coms \ntodo afternoon emails / coms \ntodo review personal notes\n}}}"
 
 command! Day r!echo "{{{ $(date "+\%a \%b \%e \%Y") \n}}}"
+command! Raproj E ~/projects/radioactive
 
