@@ -45,6 +45,14 @@ set wildignore+=**/*.git,**/*.class,**/*.pyc,**/*.swp,**/*jar,**/*.zip
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_extensions = [ 'mixed', 'line', 'dir']
 
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
 "neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_auto_select = 1
@@ -71,4 +79,6 @@ command! Workday r!echo "{{{ $(date "+\%a \%b \%e \%Y") \ntodo morning emails /c
 
 command! Day r!echo "{{{ $(date "+\%a \%b \%e \%Y") \n}}}"
 command! Raproj E ~/projects/radioactive
+command! Rasearch CtrlP ~/projects/radioactive
+command! System CtrlP ~/Dropbox/system
 
