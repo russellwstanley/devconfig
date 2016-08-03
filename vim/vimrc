@@ -80,4 +80,5 @@ command! Day r!echo "{{{ $(date "+\%a \%b \%e \%Y") \n}}}"
 command! Raproj E ~/projects/radioactive
 command! Rasearch CtrlP ~/projects/radioactive
 command! System CtrlP ~/Dropbox/system
+command! Tickle grep todo ~/Dropbox/system/tickle-logs
 
