@@ -11,7 +11,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Mark'
 
-
 "FileType support
 set filetype=on
 filetype plugin on
@@ -76,7 +75,7 @@ autocmd VimEnter * 6Mark!delegate.*\[.*\]
 command! Workday r!echo "{{{ $(date "+\%a \%b \%e \%Y") \ntodo morning emails /coms \ntodo afternoon emails / coms \ntodo review personal notes\n}}}"
 
 command! Day r!echo "{{{ $(date "+\%a \%b \%e \%Y") \n}}}"
-command! Raproj E ~/projects/radioactive
+command! Raproj CtrlPDir ~/projects/radioactive
 command! Rasearch CtrlP ~/projects/radioactive
 command! System CtrlP ~/Dropbox/system
 command! Tickle grep todo ~/Dropbox/system/tickle-logs
