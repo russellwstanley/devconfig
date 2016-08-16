@@ -60,15 +60,14 @@ let g:neocomplete#enable_auto_select = 1
 " yaml indentation
 au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
-set foldmethod=marker
 let g:auto_save = 1
 
 let g:mwIgnoreCase = 1
 let g:mwDefaultHighlightingPalette = 'maximum' 
 " let g:mwDefaultHighlightingNum = 9 
-autocmd VimEnter * 2Mark!done
+autocmd VimEnter * 2Mark!done\|\[X\]
 autocmd VimEnter * 3Mark!blok
-autocmd VimEnter * 4Mark!todo
+autocmd VimEnter * 4Mark!todo\|\[_\]
 autocmd VimEnter * 1Mark!##.*
 autocmd VimEnter * 5Mark!defer
 autocmd VimEnter * 6Mark!delegate.*\[.*\]
@@ -82,3 +81,5 @@ command! Rasearch CtrlP ~/projects/radioactive
 command! System CtrlP ~/Dropbox/system
 command! Tickle grep todo ~/Dropbox/system/tickle-logs
 
+filetype plugin indent on
+syntax on
