@@ -19,7 +19,7 @@ filetype indent on
 
 set number
 set background=dark
-colorscheme slate
+colorscheme wombat
 
 set hlsearch
 set incsearch
@@ -78,7 +78,7 @@ command! Day r!echo "{{{ $(date "+\%a \%b \%e \%Y") \n}}}"
 command! Raproj CtrlPDir ~/projects/radioactive
 command! Rasearch CtrlP ~/projects/radioactive
 command! System CtrlP ~/Dropbox/system
-command! Tickle grep todo ~/Dropbox/system/tickle-logs
+command! TickleGrep grep <f-args> ~/Dropbox/system/tickle-logs
 
 filetype plugin indent on
 syntax on

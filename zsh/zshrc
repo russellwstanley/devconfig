@@ -84,6 +84,9 @@ function gcm () {
 function rassh () {
   ssh -i ~/.ssh/keys/radioactive.pem ubuntu@$1
 }
+function rascp () {
+    scp -i ~/.ssh/keys/radioactive.pem ubuntu@$*
+}
 function ramplayer() {
   token=$(ra_streamtoken)
   mplayer "$1?authtoken=$token"
