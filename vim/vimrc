@@ -19,7 +19,7 @@ filetype indent on
 
 set number
 set background=dark
-colorscheme slate
+colorscheme wombat
 
 set hlsearch
 set incsearch
@@ -70,6 +70,8 @@ autocmd VimEnter * 4Mark!todo\|\[_\]
 autocmd VimEnter * 1Mark!##.*
 autocmd VimEnter * 5Mark!defer
 autocmd VimEnter * 6Mark!delegate.*\[.*\]
+
+
 
 command! Raproj CtrlPDir ~/projects/radioactive
 command! Rasearch CtrlP ~/projects/radioactive
