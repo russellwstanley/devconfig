@@ -92,6 +92,10 @@ function ramplayer() {
   mplayer "$1?authtoken=$token"
 }
 
+function gitignore(){
+    echo $1 >> .gitignore
+}
+
 function tickle() {
 
    if [ $# -eq 0 ] 
@@ -124,4 +128,5 @@ alias android="~/Android/Sdk/tools/android"
 alias rawcurl="curl -iv --raw"
 alias horn="mplayer ~/Dropbox/air_horn.mp3"
 alias gv="gvim"
+
 
