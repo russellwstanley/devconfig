@@ -64,11 +64,11 @@ let g:auto_save = 1
 let g:mwIgnoreCase = 1
 let g:mwDefaultHighlightingPalette = 'maximum' 
 " let g:mwDefaultHighlightingNum = 9 
-autocmd VimEnter * 2Mark!done\|\[X\]
+autocmd VimEnter * 2Mark!done
 autocmd VimEnter * 3Mark!blok
-autocmd VimEnter * 4Mark!todo\|\[_\]
+autocmd VimEnter * 4Mark!todo
 autocmd VimEnter * 1Mark!##.*
-autocmd VimEnter * 5Mark!defer
+autocmd VimEnter * 5Mark!doing
 autocmd VimEnter * 6Mark!delegate.*\[.*\]
 
 
@@ -78,7 +78,7 @@ command! Day r!echo "{{{ $(date "+\%a \%b \%e \%Y") \n}}}"
 command! Raproj CtrlPDir ~/projects/radioactive
 command! Rasearch CtrlP ~/projects/radioactive
 command! System CtrlP ~/Dropbox/system
-command! TickleGrep grep <f-args> ~/Dropbox/system/tickle-logs
+command! -nargs=1 TickleGrep grep -r <q-args> ~/Dropbox/system/tickle-logs
 
 filetype plugin indent on
 syntax on
