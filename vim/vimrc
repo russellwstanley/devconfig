@@ -72,9 +72,7 @@ autocmd VimEnter * 5Mark!doing
 autocmd VimEnter * 6Mark!delegate.*\[.*\]
 
 
-command! Workday r!echo "{{{ $(date "+\%a \%b \%e \%Y") \ntodo morning emails /coms \ntodo afternoon emails / coms \ntodo review personal notes\n}}}"
 
-command! Day r!echo "{{{ $(date "+\%a \%b \%e \%Y") \n}}}"
 command! Raproj CtrlPDir ~/projects/radioactive
 command! Rasearch CtrlP ~/projects/radioactive
 command! System CtrlP ~/Dropbox/system
