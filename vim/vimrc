@@ -41,7 +41,9 @@ set smartcase
 "ctrlp stuff
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=**/*.git,**/*.class,**/*.pyc,**/*.swp,**/*jar,**/*.zip
-let g:ctrlp_cmd = 'CtrlPBuffer'
+let g:ctrlp_cmd = 'CtrlPCurWD'
+let g:ctrlp_working_path_mode = 0
+map <C-b> :CtrlPBuffer<CR>
 let g:ctrlp_extensions = [ 'mixed', 'line', 'dir']
 
 if executable('ag')
@@ -69,14 +71,17 @@ autocmd VimEnter * 3Mark!blok
 autocmd VimEnter * 4Mark!todo
 autocmd VimEnter * 1Mark!##.*
 autocmd VimEnter * 5Mark!doing
-autocmd VimEnter * 6Mark!delegate.*\[.*\]
+autocmd VimEnter * 6Mark!donow
 
 
 
 command! Raproj CtrlPDir ~/projects/radioactive
 command! Rasearch CtrlP ~/projects/radioactive
 command! System CtrlP ~/Dropbox/system
+command! -nargs=1 Ra CtrlPDir ~/projects/radioactive/<args>
 command! -nargs=1 TickleGrep grep -r <q-args> ~/Dropbox/system/tickle-logs
 
 filetype plugin indent on
 syntax on
+
+set autochdir

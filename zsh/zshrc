@@ -84,6 +84,9 @@ function gcm () {
 function rassh () {
   ssh -i ~/.ssh/keys/radioactive.pem ubuntu@$1
 }
+function racd(){
+    cd ~/projects/radioactive/$1
+}
 function rascp () {
     scp -i ~/.ssh/keys/radioactive.pem ubuntu@$*
 }
@@ -113,6 +116,7 @@ function tickle() {
    fi
 }
 
+alias tickle="gvim ~/Dropbox/system/tickle-logs/$(date +%F)"
 alias dualscreen="~/.screenlayout/dual_screen.sh"
 alias singlescreen="~/.screenlayout/single_screen.sh"
 alias adb=~/Android/Sdk/platform-tools/adb
@@ -124,4 +128,6 @@ alias android="~/Android/Sdk/tools/android"
 alias rawcurl="curl -iv --raw"
 alias horn="mplayer ~/Dropbox/air_horn.mp3"
 alias gv="gvim"
+alias gpa="git push origin --all"
+alias tickle="gvim ~/Dropbox/system/tickle-logs/$(date +%F)"
 
