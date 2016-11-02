@@ -131,3 +131,4 @@ alias gv="gvim"
 alias gpa="git push origin --all"
 alias tickle="gvim ~/Dropbox/system/tickle-logs/$(date +%F)"
 
+export ANSIBLE_CACHE_MAX_AGE=999999999
