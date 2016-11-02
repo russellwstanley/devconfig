@@ -45,6 +45,9 @@ let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_working_path_mode = 0
 map <C-b> :CtrlPBuffer<CR>
 let g:ctrlp_extensions = [ 'mixed', 'line', 'dir']
+let g:ctrlp_match_window = 'results:100'
+let g:ctrlp_switch_buffer = 'et'
+let g:ctrlp_max_depth = 4
 
 if executable('ag')
   " Use Ag over Grep
