@@ -78,6 +78,7 @@ autocmd VimEnter * 6Mark!donow
 
 
 
+command! Hosts e ~/projects/radioactive/infrastructure/inventory/hosts
 command! Raproj CtrlPDir ~/projects/radioactive
 command! Rasearch CtrlP ~/projects/radioactive
 command! System CtrlP ~/Dropbox/system
