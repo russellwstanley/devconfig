@@ -95,6 +95,10 @@ function ramplayer() {
   mplayer "$1?authtoken=$token"
 }
 
+function gitignore(){
+    echo $1 >> .gitignore
+}
+
 function tickle() {
 
    if [ $# -eq 0 ] 
