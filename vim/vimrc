@@ -60,6 +60,18 @@ endif
 "neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_auto_select = 1
+inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("\<C-j>"))
+inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("\<C-k>"))
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  "return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " For no inserting <CR> key.
+  return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+
+
 
 " yaml indentation
 au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
@@ -78,6 +90,7 @@ autocmd VimEnter * 6Mark!donow
 
 
 
+command! Hosts e ~/projects/radioactive/infrastructure/inventory/hosts
 command! Raproj CtrlPDir ~/projects/radioactive
 command! Rasearch CtrlP ~/projects/radioactive
 command! System CtrlP ~/Dropbox/system
@@ -92,4 +105,11 @@ command! -nargs=1 TickleGrep grep -r <q-args> ~/Dropbox/system/tickle-logs
 filetype plugin indent on
 syntax on
 
+
 set autochdir
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
