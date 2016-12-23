@@ -82,6 +82,11 @@ command! Hosts e ~/projects/radioactive/infrastructure/inventory/hosts
 command! Raproj CtrlPDir ~/projects/radioactive
 command! Rasearch CtrlP ~/projects/radioactive
 command! System CtrlP ~/Dropbox/system
+function Tickle()
+    let l:timestamp=strftime("%F")
+    let l:path = "~/Dropbox/system/tickle-logs/".l:timestamp.".txt" 
+    exe "e ".l:path
+endfunction
 command! -nargs=1 Ra CtrlPDir ~/projects/radioactive/<args>
 command! -nargs=1 TickleGrep grep -r <q-args> ~/Dropbox/system/tickle-logs
 

@@ -1,118 +1,69 @@
-# fugitive.vim
+#Readme
 
-I'm not going to lie to you; fugitive.vim may very well be the best
-Git wrapper of all time.  Check out these features:
+This repository represents the latest bleeding-edge changes to gitv.
+Please help me find and remove any bugs by adding any problems you have
+to the issues tracker of this repository. Suggestions, pull requests and
+patches are also all very welcome. To download the latest stable release
+see the [gitv page on vim.org](http://www.vim.org/scripts/script.php?script_id=3574).
 
-View any blob, tree, commit, or tag in the repository with `:Gedit` (and
-`:Gsplit`, `:Gvsplit`, `:Gtabedit`, ...).  Edit a file in the index and
-write to it to stage the changes.  Use `:Gdiff` to bring up the staged
-version of the file side by side with the working tree version and use
-Vim's diff handling capabilities to stage a subset of the file's
-changes.
+I have added a new feature that allows you to pass a range to gitv.
+This has no effect in browser mode. In file mode however, only commits
+that affect at least one line in the range will be displayed. This is
+useful, for example, to view the commit history for a function and all
+of the changes made to it. You can easily watch the function 'evolve'
+as you move from commit to commit. For more information see the gitv
+documentation. If you have any problems with this new feature be sure
+to add them to the issues tracker.
 
-Bring up the output of `git status` with `:Gstatus`.  Press `-` to
-`add`/`reset` a file's changes, or `p` to `add`/`reset` `--patch`.  And guess
-what `:Gcommit` does!
+You can see screenshots of the new range feature in action
+[here](http://www.gregsexton.org/2011/05/gitv-range/).
 
-`:Gblame` brings up an interactive vertical split with `git blame`
-output.  Press enter on a line to edit the commit where the line
-changed, or `o` to open it in a split.  When you're done, use `:Gedit`
-in the historic buffer to go back to the work tree version.
+##Introduction
 
-`:Gmove` does a `git mv` on a file and simultaneously renames the
-buffer.  `:Gremove` does a `git rm` on a file and simultaneously deletes
-the buffer.
+gitv is a 'gitk clone' plugin for the text editor Vim. The goal is
+to give you a similar set of functionality as a repository viewer.
+Using this plugin you can view a repository's history including
+branching and merging, you can see which commits refs point to.
+You can quickly and easily view what changed to which files and
+when. You can perform arbitrary diffs (using Vim's excellent built
+in diff functionality) and you can easily check out whole commits
+and branches or just individual files if need be.
 
-Use `:Ggrep` to search the work tree (or any arbitrary commit) with
-`git grep`, skipping over that which is not tracked in the repository.
-`:Glog` loads all previous revisions of a file into the quickfix list so
-you can iterate over them and watch the file evolve!
+Throw in the fact that it is running in Vim and you get for free:
+the ability to move over repository history quickly and precisely
+using Vim's built in movement operators. You get excellent code
+syntax highlighting due to Vim's built in ability. You can open up
+all sorts of repository views in multiple windows and position
+them exactly how you like. You can take advantage of Vim's
+registers to copy multiple fragments of code from previous
+commits. The list goes on.
 
-`:Gread` is a variant of `git checkout -- filename` that operates on the
-buffer rather than the filename.  This means you can use `u` to undo it
-and you never get any warnings about the file changing outside Vim.
-`:Gwrite` writes to both the work tree and index versions of a file,
-making it like `git add` when called from a work tree file and like
-`git checkout` when called from the index or a blob in history.
+Start the plugin by running :Gitv in Vim when viewing a file in a git repository.
 
-Use `:Gbrowse` to open the current file on GitHub, with optional line
-range (try it in visual mode!).  If your current repository isn't on
-GitHub, `git instaweb` will be spun up instead.
+This plugin is an extension of the [tpope/fugitive](https://github.com/tpope/vim-fugitive) plugin.
 
-Add `%{fugitive#statusline()}` to `'statusline'` to get an indicator
-with the current branch in (surprise!) your statusline.
-
-Last but not least, there's `:Git` for running any arbitrary command,
-and `Git!` to open the output of a command in a temp file.
-
-## Screencasts
-
-* [A complement to command line git](http://vimcasts.org/e/31)
-* [Working with the git index](http://vimcasts.org/e/32)
-* [Resolving merge conflicts with vimdiff](http://vimcasts.org/e/33)
-* [Browsing the git object database](http://vimcasts.org/e/34)
-* [Exploring the history of a git repository](http://vimcasts.org/e/35)
+I hope you like it!
 
 ## Installation
 
-If you don't have a preferred installation method, one option is to install
-[pathogen.vim](https://github.com/tpope/vim-pathogen), and then copy
-and paste:
+Install in ~/.vim, or in ~\vimfiles if you're on Windows. This
+plugin should be fully pathogen compatible if you want to install
+it this way.
 
-    cd ~/.vim/bundle
-    git clone git://github.com/tpope/vim-fugitive.git
-    vim -u NONE -c "helptags vim-fugitive/doc" -c q
+gitv was developed against Vim 7.3 but earlier versions of Vim
+should work.  Vim 7.2+ is recommended as it ships with syntax
+highlighting for many Git file types. **You will also need the
+[tpope/fugitive](https://github.com/tpope/vim-fugitive) plugin installed and working for gitv to work.**
 
-If your Vim version is below 7.2, I recommend also installing
-[vim-git](https://github.com/tpope/vim-git) for syntax highlighting and
-other Git niceties.
+## Screenshots and Links
 
-## FAQ
+Here is a screenshot to keep you going.
 
-> I installed the plugin and started Vim.  Why don't any of the commands
-> exist?
+![gitv](http://www.gregsexton.org/images/gitk-vim.jpg)
 
-Fugitive cares about the current file, not the current working
-directory.  Edit a file from the repository.
+More can be found at the homepage for gitv:
+http://www.gregsexton.org/portfolio/gitv/
 
-> I opened a new tab.  Why don't any of the commands exist?
-
-Fugitive cares about the current file, not the current working
-directory.  Edit a file from the repository.
-
-> Why is `:Gbrowse` not using the right browser?
-
-`:Gbrowse` delegates to `git web--browse`, which is less than perfect
-when it comes to finding the right browser.  You can tell it the correct
-browser to use with `git config --global web.browser ...`.  On OS X, for
-example, you might want to set this to `open`.  See `git web--browse --help`
-for details.
-
-> Here's a patch that automatically opens the quickfix window after
-> `:Ggrep`.
-
-This is a great example of why I recommend asking before patching.
-There are valid arguments to be made both for and against automatically
-opening the quickfix window.  Whenever I have to make an arbitrary
-decision like this, I ask what Vim would do.  And Vim does not open a
-quickfix window after `:grep`.
-
-Luckily, it's easy to implement the desired behavior without changing
-fugitive.vim.  The following autocommand will cause the quickfix window
-to open after any grep invocation:
-
-    autocmd QuickFixCmdPost *grep* cwindow
-
-## Self-Promotion
-
-Like fugitive.vim? Follow the repository on
-[GitHub](https://github.com/tpope/vim-fugitive) and vote for it on
-[vim.org](http://www.vim.org/scripts/script.php?script_id=2975).  And if
-you're feeling especially charitable, follow [tpope](http://tpo.pe/) on
-[Twitter](http://twitter.com/tpope) and
-[GitHub](https://github.com/tpope).
-
-## License
-
-Copyright (c) Tim Pope.  Distributed under the same terms as Vim itself.
-See `:help license`.
+You can download stable release versions (and vote for gitv!) at
+[gitv’s page](http://www.vim.org/scripts/script.php?script_id=3574) on
+Vim.org.
