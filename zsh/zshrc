@@ -81,6 +81,9 @@ source $ZSH/oh-my-zsh.sh
 function gcm () {
    git commit -m "$*"
 }
+function gvopen() {
+    gvim $($*)
+}
 function rassh () {
   ssh -i ~/.ssh/keys/radioactive.pem ubuntu@$1
 }
@@ -98,29 +101,29 @@ function ramplayer() {
 function gitignore(){
     echo $1 >> .gitignore
 }
-
-function tickle() {
-
-   if [ $# -eq 0 ] 
-   then
-       date=$(date "+%F")
-       unixdate=$(date -d $date +%s)
-       tickledir="/home/russell/Dropbox/system/tickle-logs"
-       touch $tickledir/$date
-       for file in $(ls $tickledir)
-       do
-         unixfiledate=$(date -d $file +%s)
-         if [ $unixdate -ge $unixfiledate ]
-         then
-             gvim $tickledir/$file
-         fi
-       done
-   else
-       echo "$1"
-   fi
+function docker_kill_containers(){
+    docker kill $(docker ps -aq)
+}
+function docker_rm_containers(){
+    docker rm $(docker ps -aq)
+}
+function docker_rm_images(){
+    docker rmi $(docker images -aq)
+}
+function docker_rm_volumes(){
+    docker volume rm $(docker volume ls -q)
+}
+function docker_purge(){
+    docker_kill_containers
+    docker_rm_containers
+    docker_rm_images
+    docker_rm_volumes
 }
 
-alias tickle="gvim ~/Dropbox/system/tickle-logs/$(date +%F)"
+function groot(){
+    cd $(git rev-parse --show-toplevel)
+}
+
 alias dualscreen="~/.screenlayout/dual_screen.sh"
 alias singlescreen="~/.screenlayout/single_screen.sh"
 alias adb=~/Android/Sdk/platform-tools/adb
@@ -133,6 +136,5 @@ alias rawcurl="curl -iv --raw"
 alias horn="mplayer ~/Dropbox/air_horn.mp3"
 alias gv="gvim"
 alias gpa="git push origin --all"
-alias tickle="gvim ~/Dropbox/system/tickle-logs/$(date +%F)"
 
 export ANSIBLE_CACHE_MAX_AGE=999999999
