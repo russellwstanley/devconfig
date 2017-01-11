@@ -97,6 +97,10 @@ function ramplayer() {
   token=$(ra_streamtoken)
   mplayer "$1?authtoken=$token"
 }
+function take(){
+    mkdir -p $1
+    cd $1
+}
 
 function gitignore(){
     echo $1 >> .gitignore
@@ -136,5 +140,6 @@ alias rawcurl="curl -iv --raw"
 alias horn="mplayer ~/Dropbox/air_horn.mp3"
 alias gv="gvim"
 alias gpa="git push origin --all"
+
 
 export ANSIBLE_CACHE_MAX_AGE=999999999
