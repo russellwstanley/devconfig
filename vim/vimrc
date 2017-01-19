@@ -41,11 +41,10 @@ set smartcase
 "ctrlp stuff
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=**/*.git,**/*.class,**/*.pyc,**/*.swp,**/*jar,**/*.zip
-let g:ctrlp_cmd = 'CtrlPCurWD'
-let g:ctrlp_working_path_mode = 0
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'rw'
 map <C-b> :CtrlPBuffer<CR>
-map <C-d> :CtrlPDir<CR>
-let g:ctrlp_extensions = [ 'mixed', 'line', 'dir']
+let g:ctrlp_extensions = [ 'dir']
 let g:ctrlp_match_window = 'results:100'
 let g:ctrlp_switch_buffer = 'et'
 let g:ctrlp_max_depth = 4
