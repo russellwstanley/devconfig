@@ -139,7 +139,11 @@ alias android="~/Android/Sdk/tools/android"
 alias rawcurl="curl -iv --raw"
 alias horn="mplayer ~/Dropbox/air_horn.mp3"
 alias gv="gvim"
-alias gpa="git push origin --all"
+alias gitpoa="git push origin --all"
+alias gs="git status"
+alias ga="git add . && git add -u"
+alias gpull="git pull --all"
+alias gpush="git push --all"
 
 
 export ANSIBLE_CACHE_MAX_AGE=999999999

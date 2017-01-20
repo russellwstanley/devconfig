@@ -23,12 +23,18 @@ colorscheme wombat
 
 set hlsearch
 set incsearch
-
 "moving between windows
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
+
+nmap <silent> <A-k> :wincmd k<CR>
+nmap <silent> <A-j> :wincmd j<CR>
+nmap <silent> <A-h> :wincmd h<CR>
+nmap <silent> <A-l> :wincmd l<CR>
+
+"resize windows
+nmap <silent> <C-A-l> :vertical resize +10 <CR>
+nmap <silent> <C-A-h> :vertical resize -10 <CR>
+nmap <silent> <C-A-j> :resize +10 <CR>
+nmap <silent> <C-A-k> :resize -10 <CR>
 
 set ignorecase
 set smartindent
@@ -44,6 +50,7 @@ set wildignore+=**/*.git,**/*.class,**/*.pyc,**/*.swp,**/*jar,**/*.zip
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'rw'
 map <C-b> :CtrlPBuffer<CR>
+map <C-d> :CtrlPDir<CR>
 let g:ctrlp_extensions = [ 'dir']
 let g:ctrlp_match_window = 'results:100'
 let g:ctrlp_switch_buffer = 'et'
@@ -91,7 +98,7 @@ autocmd VimEnter * 6Mark!donow
 
 
 command! Hosts e ~/projects/radioactive/infrastructure/inventory/hosts
-command! Raproj CtrlPDir ~/projects/radioactive
+command! Raproj cd ~/projects/radioactive
 command! Rasearch CtrlP ~/projects/radioactive
 command! System CtrlP ~/Dropbox/system
 function Tickle()
@@ -99,17 +106,8 @@ function Tickle()
     let l:path = "~/Dropbox/system/tickle-logs/".l:timestamp.".txt" 
     exe "e ".l:path
 endfunction
-command! -nargs=1 Ra CtrlPDir ~/projects/radioactive/<args>
-command! -nargs=1 TickleGrep grep -r <q-args> ~/Dropbox/system/tickle-logs
 
 filetype plugin indent on
 syntax on
 
-
-set autochdir
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+set winaltkeys=no
