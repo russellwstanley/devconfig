@@ -91,7 +91,7 @@ let g:mwDefaultHighlightingPalette = 'maximum'
 autocmd VimEnter * 2Mark!done
 autocmd VimEnter * 3Mark!blok
 autocmd VimEnter * 4Mark!todo
-autocmd VimEnter * 1Mark!##.*
+autocmd VimEnter * 1Mark!easy
 autocmd VimEnter * 5Mark!doing
 autocmd VimEnter * 6Mark!donow
 
