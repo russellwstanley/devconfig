@@ -21,7 +21,6 @@ set number
 set background=dark
 colorscheme wombat
 
-set hlsearch
 set incsearch
 "moving between windows
 
