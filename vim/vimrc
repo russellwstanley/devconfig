@@ -21,7 +21,6 @@ set number
 set background=dark
 colorscheme wombat
 
-set hlsearch
 set incsearch
 "moving between windows
 
@@ -98,7 +97,7 @@ autocmd VimEnter * 6Mark!donow
 
 
 command! Hosts e ~/projects/radioactive/infrastructure/inventory/hosts
-command! Raproj cd ~/projects/radioactive
+command! Rap cd ~/projects/radioactive
 command! Rasearch CtrlP ~/projects/radioactive
 command! System CtrlP ~/Dropbox/system
 function Tickle()
