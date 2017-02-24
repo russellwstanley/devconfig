@@ -19,7 +19,7 @@ filetype indent on
 
 set number
 set background=dark
-colorscheme wombat
+colorscheme codeschool
 
 set incsearch
 "moving between windows
