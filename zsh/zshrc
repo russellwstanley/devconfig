@@ -104,6 +104,14 @@ function take(){
 function gitignore(){
     echo $1 >> .gitignore
 }
+function rap(){
+    if [ "$#" -eq 0 ]; 
+    then 
+        cd ~/projects/radioactive
+    else 
+        cd ~/projects/radioactive/$1
+    fi
+}
 function docker_kill_containers(){
     docker kill $(docker ps -aq)
 }
@@ -133,7 +141,6 @@ alias adb=~/Android/Sdk/platform-tools/adb
 alias suadb="sudo ~/Android/Sdk/platform-tools/adb"
 alias gradle=./gradlew
 alias proj="cd ~/projects"
-alias rap="cd ~/projects/radioactive"
 alias android="~/Android/Sdk/tools/android"
 alias rawcurl="curl -iv --raw"
 alias horn="mplayer ~/Dropbox/air_horn.mp3"
