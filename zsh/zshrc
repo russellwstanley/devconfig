@@ -136,7 +136,8 @@ function groot(){
     cd $(git rev-parse --show-toplevel)
 }
 
-alias em="emacsclient -t"
+alias emc="emacsclient -t"
+alias em="emacs -nw"
 alias dualscreen="~/.screenlayout/dual_screen.sh"
 alias singlescreen="~/.screenlayout/single_screen.sh"
 alias adb=~/Android/Sdk/platform-tools/adb

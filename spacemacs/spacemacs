@@ -315,10 +315,12 @@ you should place your code here."
           org-agenda-start-day "-1d"
           org-todo-keywords '((sequence "TODO(t)" "BLOCKED(b@)" "DOING(o)" "DELEGATED(w@)" "|" "DONE(d!)" "CANCELED(c@)")))
     )
-  (add-hook 'focus-out-hook (lambda () (save-some-buffers t)))
   (setq inhibit-splash-screen t)
   (org-agenda-list)
   (delete-other-windows)
+  (setq auto-save-visited-file-name t
+        auto-save-interval 20
+        auto-save-timeout 5)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
