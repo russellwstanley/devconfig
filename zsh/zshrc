@@ -137,7 +137,7 @@ function groot(){
 }
 
 alias emc="emacsclient -t"
-alias em="emacs -nw"
+alias ems="emacs --daemon"
 alias dualscreen="~/.screenlayout/dual_screen.sh"
 alias singlescreen="~/.screenlayout/single_screen.sh"
 alias adb=~/Android/Sdk/platform-tools/adb

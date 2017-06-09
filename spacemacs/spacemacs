@@ -313,7 +313,7 @@ you should place your code here."
     (setq org-agenda-files '("/home/russell/Dropbox/system")
           org-agenda-span 30
           org-agenda-start-day "-1d"
-          org-todo-keywords '((sequence "TODO(t)" "BLOCKED(b@)" "DOING(o)" "DELEGATED(w@)" "|" "DONE(d!)" "CANCELED(c@)")))
+          org-todo-keywords '((sequence  "TODO(t)" "QUICKIE(q)" "BLOCKED(b@)" "DOING(o)" "DELEGATED(w@)" "|" "DONE(d!)" "CANCELED(c@)")))
     )
   (setq inhibit-splash-screen t)
   (org-agenda-list)
