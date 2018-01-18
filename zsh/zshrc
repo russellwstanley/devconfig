@@ -97,6 +97,11 @@ function ramplayer() {
   token=$(ra_streamtoken)
   mplayer "$1?authtoken=$token"
 }
+
+function pycharm() {
+    ~/devtools/pycharm-community-4.0.4/bin/pycharm.sh $1
+}
+
 function take(){
     mkdir -p $1
     cd $1
@@ -153,6 +158,12 @@ alias gs="git status"
 alias ga="git add . && git add -u"
 alias gpull="git pull --all"
 alias gpush="git push --all"
+alias bfg="java -jar /home/russell/devtools/bfg-1.12.15.jar"
+alias gdt="git difftool -y"
+alias gdts="git difftool --staged -y"
+alias guom="git push origin master"
+alias gdom="git pull origin master"
 
 
 export ANSIBLE_CACHE_MAX_AGE=999999999
+

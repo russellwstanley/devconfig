@@ -31,6 +31,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     terraform
+     go
      nginx
      html
      sql
@@ -45,7 +47,7 @@ values."
      ;; ----------------------------------------------------------------
      helm
      typescript
-     ;; auto-completion
+     auto-completion
      ;; better-defaults
      emacs-lisp
      git
@@ -54,8 +56,9 @@ values."
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     spell-checking
-     ;; syntax-checking
+     (spell-checking :variables
+                     spell-checking-enable-by-default nil)
+     syntax-checking
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -307,6 +310,10 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (setq backup-directory-alist
+        `((".*" . ,temporary-file-directory)))
+  (setq auto-save-file-name-transforms
+        `((".*" ,temporary-file-directory t)))
 
   (with-eval-after-load 'org
     (setq org-agenda-files '("/home/russell/projects/system")
@@ -316,7 +323,8 @@ you should place your code here."
     )
   (setq 
         auto-save-interval 20
-        auto-save-timeout 1)
+        auto-save-timeout 1
+        )
 
   (defun copy-to-clipboard ()
     "Copies selection to x-clipboard."

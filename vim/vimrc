@@ -1,3 +1,4 @@
+set t_ut=
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -17,9 +18,8 @@ filetype plugin on
 filetype indent on
 
 
-set number
+colorscheme gruvbox
 set background=dark
-colorscheme codeschool
 
 set incsearch
 "moving between windows
@@ -50,7 +50,7 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'rw'
 map <C-b> :CtrlPBuffer<CR>
 map <C-d> :CtrlPDir<CR>
-let g:ctrlp_extensions = [ 'dir']
+let g:ctrlp_extensions = [ 'dir','line']
 let g:ctrlp_match_window = 'results:100'
 let g:ctrlp_switch_buffer = 'et'
 let g:ctrlp_max_depth = 4
@@ -85,28 +85,13 @@ au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 let g:auto_save = 1
 
 let g:mwIgnoreCase = 1
-let g:mwDefaultHighlightingPalette = 'maximum' 
-" let g:mwDefaultHighlightingNum = 9 
-autocmd VimEnter * 2Mark!done
-autocmd VimEnter * 3Mark!blok
-autocmd VimEnter * 4Mark!todo
-autocmd VimEnter * 1Mark!easy
-autocmd VimEnter * 5Mark!doing
-autocmd VimEnter * 6Mark!donow
 
 
-
-command! Hosts e ~/projects/radioactive/infrastructure/inventory/hosts
-command! Rap cd ~/projects/radioactive
-command! Rasearch CtrlP ~/projects/radioactive
-command! System CtrlP ~/Dropbox/system
-function Tickle()
-    let l:timestamp=strftime("%F")
-    let l:path = "~/Dropbox/system/tickle-logs/".l:timestamp.".txt" 
-    exe "e ".l:path
-endfunction
 
 filetype plugin indent on
 syntax on
 
 set winaltkeys=no
+
+" custom commands
+:command Hosts :e ~/projects/radioactive/inventory/inventory/hosts
