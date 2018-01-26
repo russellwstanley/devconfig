@@ -10,7 +10,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Mark'
 
 "FileType support
 set filetype=on
@@ -95,3 +94,4 @@ set winaltkeys=no
 
 " custom commands
 :command Hosts :e ~/projects/radioactive/inventory/inventory/hosts
+let g:validator_javascript_checkers = ['eslint']
