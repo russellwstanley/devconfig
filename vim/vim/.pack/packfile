@@ -6,5 +6,10 @@
 - 
   category: default
   local: false
+  name: maralla/completor.vim
+  opt: false
+- 
+  category: default
+  local: false
   name: maralla/validator.vim
   opt: false
