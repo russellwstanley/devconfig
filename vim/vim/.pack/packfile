@@ -6,10 +6,25 @@
 - 
   category: default
   local: false
+  name: ctrlp
+  opt: false
+- 
+  category: default
+  local: false
+  name: flibble
+  opt: false
+- 
+  category: default
+  local: false
   name: maralla/completor.vim
   opt: false
 - 
   category: default
   local: false
   name: maralla/validator.vim
+  opt: false
+- 
+  category: default
+  local: false
+  name: speeddating
   opt: false

@@ -163,6 +163,7 @@ alias gdt="git difftool -y"
 alias gdts="git difftool --staged -y"
 alias guom="git push origin master"
 alias gdom="git pull origin master"
+alias actions="emc ~/projects/system/actions.org"
 
 
 export ANSIBLE_CACHE_MAX_AGE=999999999
