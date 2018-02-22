@@ -1,0 +1,18 @@
+[submodule "vim/vim/pack/default/start/completor.vim"]
+	path = vim/vim/pack/default/start/completor.vim
+	url = git@github.com:maralla/completor.vim.git
+[submodule "vim/vim/pack/default/start/ctrlp.vim"]
+	path = vim/vim/pack/default/start/ctrlp.vim
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule "vim/vim/pack/default/start/validator.vim"]
+	path = vim/vim/pack/default/start/validator.vim
+	url = git@github.com:maralla/validator.vim.git
+[submodule "vim/vim/pack/default/start/vim-autoread"]
+	path = vim/vim/pack/default/start/vim-autoread
+	url = git@github.com:djoshea/vim-autoread.git
+[submodule "vim/vim/pack/default/start/vim-auto-save"]
+	path = vim/vim/pack/default/start/vim-auto-save
+	url = git@github.com:907th/vim-auto-save.git
+[submodule "vim/vim/pack/default/start/vim-speeddating"]
+	path = vim/vim/pack/default/start/vim-speeddating
+	url = git@github.com:tpope/vim-speeddating.git
