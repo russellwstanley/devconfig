@@ -13,16 +13,11 @@ let g:completer_node_binary = 'usr/local/bin/node'
 
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 
 colorscheme badwolf
 
 set incsearch
-"moving between windows
-
-nmap <silent> <A-k> :wincmd k<CR>
-nmap <silent> <A-j> :wincmd j<CR>
-nmap <silent> <A-h> :wincmd h<CR>
-nmap <silent> <A-l> :wincmd l<CR>
 
 "resize windows
 nmap <silent> <C-A-l> :vertical resize +10 <CR>
@@ -65,7 +60,15 @@ au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 let g:auto_save = 1
 
-let g:mwIgnoreCase = 1
+let g:mwIgnoreCase = 0
+let g:mwDefaultHighlightingPalette = 'extended' 
+autocmd VimEnter * 3Mark!DONE
+autocmd VimEnter * 11Mark!CANCELLED
+autocmd VimEnter * 4Mark!BLOCKED
+autocmd VimEnter * 19Mark!TODO
+autocmd VimEnter * 1Mark!EASY
+autocmd VimEnter * 2Mark!DOING
+autocmd VimEnter * 6Mark!DONOW
 
 
 
@@ -83,4 +86,16 @@ let g:validator_permament_sign = 1
 :command Hosts :e ~/projects/radioactive/inventory/inventory/hosts
 
 :set backspace=indent,eol,start
-:set clipboard+=unnamedplus
+
+let g:rainbow_active = 1
+let g:markdown_folding = 1 
+let g:markdown_enable_folding = 1 
+
+" moving lines
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+

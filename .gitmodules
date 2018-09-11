@@ -16,3 +16,15 @@
 [submodule "vim/vim/pack/default/start/vim-speeddating"]
 	path = vim/vim/pack/default/start/vim-speeddating
 	url = git@github.com:tpope/vim-speeddating.git
+[submodule "vim/vim/pack/default/start/rainbow"]
+	path = vim/vim/pack/default/start/rainbow
+	url = https://github.com/luochen1990/rainbow.git
+[submodule "vim/vim/pack/default/start/vim-fireplace"]
+	path = vim/vim/pack/default/start/vim-fireplace
+	url = git://github.com/tpope/vim-fireplace.git
+[submodule "vim/vim/pack/default/start/vim-ingo-library"]
+	path = vim/vim/pack/default/start/vim-ingo-library
+	url = https://github.com/inkarkat/vim-ingo-library.git
+[submodule "vim/vim/pack/default/start/vim-mark"]
+	path = vim/vim/pack/default/start/vim-mark
+	url = https://github.com/inkarkat/vim-mark.git

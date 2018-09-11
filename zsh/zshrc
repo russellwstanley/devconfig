@@ -6,7 +6,7 @@ export TERM=xterm-256color
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="muse"
+ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -143,27 +143,19 @@ function groot(){
 
 alias emc="emacsclient -t"
 alias ems="emacs --daemon"
-alias dualscreen="~/.screenlayout/dual_screen.sh"
-alias singlescreen="~/.screenlayout/single_screen.sh"
-alias adb=~/Android/Sdk/platform-tools/adb
-alias suadb="sudo ~/Android/Sdk/platform-tools/adb"
-alias gradle=./gradlew
 alias proj="cd ~/projects"
 alias android="~/Android/Sdk/tools/android"
 alias rawcurl="curl -iv --raw"
 alias horn="mplayer ~/Dropbox/air_horn.mp3"
-alias gv="gvim"
-alias gitpoa="git push origin --all"
 alias gs="git status"
 alias ga="git add . && git add -u"
-alias gpull="git pull --all"
-alias gpush="git push --all"
-alias bfg="java -jar /home/russell/devtools/bfg-1.12.15.jar"
 alias gdt="git difftool -y"
 alias gdts="git difftool --staged -y"
-alias guom="git push origin master"
-alias gdom="git pull origin master"
-alias actions="emc ~/projects/system/actions.org"
+alias t="todo"
+alias vt="vim ~/Dropbox/system/todo.txt"
+alias vwl="vim ~/Dropbox/system/work.log"
+alias showorig='find . -type f -name "*.orig"'
+alias purgeorig='find . -type f -name "*.orig" -delete'
 
 
 export ANSIBLE_CACHE_MAX_AGE=999999999
