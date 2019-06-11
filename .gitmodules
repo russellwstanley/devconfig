@@ -28,3 +28,6 @@
 [submodule "vim/vim/pack/default/start/vim-mark"]
 	path = vim/vim/pack/default/start/vim-mark
 	url = https://github.com/inkarkat/vim-mark.git
+[submodule "vim/vim/pack/default/start/vim-table-mode"]
+	path = vim/vim/pack/default/start/vim-table-mode
+	url = git@github.com:dhruvasagar/vim-table-mode.git

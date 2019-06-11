@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export TERM=xterm-256color
+export JIRA_API_TOKEN=EEdN5fJglsJ9dsJCjzIA8223
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -46,7 +47,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fabric docker gradle)
+plugins=(fabric docker gradle nvm)
 
 # User configuration
 
@@ -156,7 +157,21 @@ alias vt="vim ~/Dropbox/system/todo.txt"
 alias vwl="vim ~/Dropbox/system/work.log"
 alias showorig='find . -type f -name "*.orig"'
 alias purgeorig='find . -type f -name "*.orig" -delete'
+alias gtd='cd ~/Dropbox/system'
+alias worklog='vim ~/Dropbox/system/work.log.md'
+
 
 
 export ANSIBLE_CACHE_MAX_AGE=999999999
 
+export PATH=$PATH:~/devtools/adr-tools/src
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/russell/devtools/google-cloud-sdk/path.zsh.inc' ]; then . '/home/russell/devtools/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/russell/devtools/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/russell/devtools/google-cloud-sdk/completion.zsh.inc'; fi
