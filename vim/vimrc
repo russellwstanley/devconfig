@@ -65,15 +65,6 @@ au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 let g:auto_save = 1
 
-let g:mwIgnoreCase = 0
-let g:mwDefaultHighlightingPalette = 'extended' 
-autocmd VimEnter * 3Mark!DONE
-autocmd VimEnter * 11Mark!CANCELLED
-autocmd VimEnter * 4Mark!BLOCKED
-autocmd VimEnter * 19Mark!TODO
-autocmd VimEnter * 1Mark!EASY
-autocmd VimEnter * 2Mark!DOING
-autocmd VimEnter * 6Mark!DONOW
 
 
 
@@ -94,9 +85,6 @@ let g:rainbow_active = 1
 let g:markdown_folding = 1 
 let g:markdown_enable_folding = 1 
 
-nmap <leader>d IDONE <ESC>
-nmap <leader>t ITODO <ESC>
-nmap <leader>e IEASY <ESC>
-
-
+nmap <leader>d I<C-v>u2714 <ESC>
+nmap <leader>x I<C-v>u2716 <ESC>
 
