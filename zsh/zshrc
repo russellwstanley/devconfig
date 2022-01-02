@@ -142,6 +142,10 @@ function groot(){
     cd $(git rev-parse --show-toplevel)
 }
 
+function swl(){
+    ag $1 /home/russell/Dropbox/notes/work_log.md
+}
+
 alias emc="emacsclient -t"
 alias ems="emacs --daemon"
 alias proj="cd ~/projects"
@@ -152,9 +156,7 @@ alias gs="git status"
 alias ga="git add . && git add -u"
 alias gdt="git difftool -y"
 alias gdts="git difftool --staged -y"
-alias t="todo"
-alias vt="vim ~/Dropbox/system/todo.txt"
-alias vwl="vim ~/Dropbox/system/work.log"
+alias vwl="vim ~/Dropbox/notes/work_log.md"
 alias showorig='find . -type f -name "*.orig"'
 alias purgeorig='find . -type f -name "*.orig" -delete'
 alias gtd='cd ~/Dropbox/system'
@@ -175,3 +177,9 @@ if [ -f '/home/russell/devtools/google-cloud-sdk/path.zsh.inc' ]; then . '/home/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/russell/devtools/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/russell/devtools/google-cloud-sdk/completion.zsh.inc'; fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

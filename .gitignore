@@ -1,3 +1,4 @@
 *.swp
 *.orig
 **\.\#**
+vim/vim/.netrwhist*
