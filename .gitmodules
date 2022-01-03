@@ -1,12 +1,6 @@
-[submodule "vim/vim/pack/default/start/completor.vim"]
-	path = vim/vim/pack/default/start/completor.vim
-	url = https://github.com/maralla/completor.vim.git
 [submodule "vim/vim/pack/default/start/ctrlp.vim"]
 	path = vim/vim/pack/default/start/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule "vim/vim/pack/default/start/validator.vim"]
-	path = vim/vim/pack/default/start/validator.vim
-	url = https://github.com/maralla/validator.vim.git
 [submodule "vim/vim/pack/default/start/vim-autoread"]
 	path = vim/vim/pack/default/start/vim-autoread
 	url = https://github.com/djoshea/vim-autoread.git
