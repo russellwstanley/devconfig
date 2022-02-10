@@ -18,7 +18,9 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 
-colorscheme badwolf
+packadd! dracula
+syntax enable
+colorscheme dracula
 
 set incsearch
 
@@ -81,3 +83,5 @@ let g:markdown_enable_folding = 1
 nmap <leader>d I<C-v>u2714 <ESC>
 nmap <leader>x I<C-v>u2716 <ESC>
 
+" Default to not read-only in vimdiff
+set noro

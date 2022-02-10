@@ -22,3 +22,6 @@
 [submodule "vim/vim/pack/default/start/vim-table-mode"]
 	path = vim/vim/pack/default/start/vim-table-mode
 	url = https://github.com/dhruvasagar/vim-table-mode.git
+[submodule "vim/vim/pack/themes/start/dracula"]
+	path = vim/vim/pack/themes/start/dracula
+	url = git@github.com:dracula/vim.git

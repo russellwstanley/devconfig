@@ -2,12 +2,13 @@
 export ZSH=$HOME/.oh-my-zsh
 export TERM=xterm-256color
 export JIRA_API_TOKEN=EEdN5fJglsJ9dsJCjzIA8223
+export LD_LIBRARY_PATH=/usr/local/lib
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="spaceship"
+ZSH_THEME="dracula"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -82,23 +83,6 @@ source $ZSH/oh-my-zsh.sh
 function gcm () {
    git commit -m "$*"
 }
-function gvopen() {
-    gvim $($*)
-}
-function rassh () {
-  ssh -i ~/.ssh/keys/ra_id_rsa ubuntu@$1
-}
-function racd(){
-    cd ~/projects/radioactive/$1
-}
-function rascp () {
-    scp -i ~/.ssh/keys/ra_id_rsa ubuntu@$*
-}
-function ramplayer() {
-  token=$(ra_streamtoken)
-  mplayer "$1?authtoken=$token"
-}
-
 function pycharm() {
     ~/devtools/pycharm-community-4.0.4/bin/pycharm.sh $1
 }
@@ -110,14 +94,6 @@ function take(){
 
 function gitignore(){
     echo $1 >> .gitignore
-}
-function rap(){
-    if [ "$#" -eq 0 ]; 
-    then 
-        cd ~/projects/radioactive
-    else 
-        cd ~/projects/radioactive/$1
-    fi
 }
 function docker_kill_containers(){
     docker kill $(docker ps -aq)
@@ -142,29 +118,23 @@ function groot(){
     cd $(git rev-parse --show-toplevel)
 }
 
-function swl(){
-    ag $1 /home/russell/Dropbox/notes/work_log.md
-}
 
-alias emc="emacsclient -t"
-alias ems="emacs --daemon"
-alias proj="cd ~/projects"
-alias android="~/Android/Sdk/tools/android"
 alias rawcurl="curl -iv --raw"
 alias horn="mplayer ~/Dropbox/air_horn.mp3"
 alias gs="git status"
 alias ga="git add . && git add -u"
 alias gdt="git difftool -y"
 alias gdts="git difftool --staged -y"
-alias vwl="vim ~/Dropbox/notes/work_log.md"
 alias showorig='find . -type f -name "*.orig"'
 alias purgeorig='find . -type f -name "*.orig" -delete'
 alias gtd='cd ~/Dropbox/system'
 alias worklog='vim ~/Dropbox/system/work.log.md'
+alias gud='git branch -f dev origin/dev && git fetch origin dev:dev -u && git remote prune origin && git-clean-branches' 
+alias git-clean-branches='git branch --merged| egrep -v "(^\*|prod|dev)" | xargs -r git branch -d'
+alias gpr="gh pr create --base dev --repo wavemm/monorepo --web" 
 
 
 
-export ANSIBLE_CACHE_MAX_AGE=999999999
 
 export PATH=$PATH:~/devtools/adr-tools/src
 
@@ -172,14 +142,17 @@ export PATH=$PATH:~/devtools/adr-tools/src
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/russell/devtools/google-cloud-sdk/path.zsh.inc' ]; then . '/home/russell/devtools/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/russell/devtools/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/russell/devtools/google-cloud-sdk/completion.zsh.inc'; fi
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Wave config auto-added by bin/setup
+source /home/russell/.waverc
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/russell/google-cloud-sdk/path.zsh.inc' ]; then . '/home/russell/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/russell/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/russell/google-cloud-sdk/completion.zsh.inc'; fi
