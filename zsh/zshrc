@@ -117,6 +117,12 @@ function docker_purge(){
 function groot(){
     cd $(git rev-parse --show-toplevel)
 }
+function del(){
+    mv $1 ~/deleted
+}
+function restore(){
+    mv  ~/deleted/$1 $1
+}
 
 
 alias rawcurl="curl -iv --raw"
@@ -132,6 +138,11 @@ alias worklog='vim ~/Dropbox/system/work.log.md'
 alias gud='git branch -f dev origin/dev && git fetch origin dev:dev -u && git remote prune origin && git-clean-branches' 
 alias git-clean-branches='git branch --merged| egrep -v "(^\*|prod|dev)" | xargs -r git branch -d'
 alias gpr="gh pr create --base dev --repo wavemm/monorepo --web" 
+alias gprt="make m.typecheck && gpr" 
+alias todo="vim ~/Dropbox/todo.md"
+alias worklog="vim ~/Dropbox/worklog.md"
+alias repo="cd /home/russell/code/monorepo"
+
 
 
 
@@ -156,3 +167,6 @@ if [ -f '/home/russell/google-cloud-sdk/path.zsh.inc' ]; then . '/home/russell/g
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/russell/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/russell/google-cloud-sdk/completion.zsh.inc'; fi
+
+# added by Snowflake SnowSQL installer
+export PATH=/home/russell/bin:$PATH

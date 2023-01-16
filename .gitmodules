@@ -1,6 +1,6 @@
 [submodule "vim/vim/pack/default/start/ctrlp.vim"]
 	path = vim/vim/pack/default/start/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "vim/vim/pack/default/start/vim-autoread"]
 	path = vim/vim/pack/default/start/vim-autoread
 	url = https://github.com/djoshea/vim-autoread.git
@@ -24,4 +24,22 @@
 	url = https://github.com/dhruvasagar/vim-table-mode.git
 [submodule "vim/vim/pack/themes/start/dracula"]
 	path = vim/vim/pack/themes/start/dracula
-	url = git@github.com:dracula/vim.git
+	url = https://github.com/dracula/vim.git
+[submodule "zsh/themes/zsh"]
+	path = zsh/themes/zsh
+	url = https://github.com/dracula/zsh.git
+[submodule "vim/vim/pack/default/start/vim-hcl"]
+	path = vim/vim/pack/default/start/vim-hcl
+	url = https://github.com/jvirtanen/vim-hcl.git
+[submodule "vim/vim/pack/default/start/lightline.vim"]
+	path = vim/vim/pack/default/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule "vim/vim/pack/default/start/CamelCaseMotion"]
+	path = vim/vim/pack/default/start/CamelCaseMotion
+	url = https://github.com/bkad/CamelCaseMotion.git
+[submodule "vim/vim/pack/default/start/vimwiki"]
+	path = vim/vim/pack/default/start/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
+[submodule "vim/vim/pack/default/start/vim-side-search"]
+	path = vim/vim/pack/default/start/vim-side-search
+	url = https://github.com/ddrscott/vim-side-search.git

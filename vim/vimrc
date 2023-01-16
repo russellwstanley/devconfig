@@ -30,6 +30,7 @@ set smartindent
 set tabstop=4 
 set shiftwidth=4 
 set expandtab
+set laststatus=2
 
 set smartcase
 
@@ -53,7 +54,7 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-
+let g:ctrlp_use_caching = 0
 
 " yaml indentation
 au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
@@ -85,3 +86,25 @@ nmap <leader>x I<C-v>u2716 <ESC>
 
 " Default to not read-only in vimdiff
 set noro
+
+
+" bind \ (backward slash) to grep shortcut
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap <leader>f :SideSearch<SPACE>
+
+let g:vimwiki_list = [{'path': '~/Dropbox/notes', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_ext2syntax = {'.md' : 'markdown'}
+
+let g:vimwiki_markdown_link_ext = 1
+
+
+" camelcasemotion
+"map <silent> w <Plug>CamelCaseMotion_w
+"map <silent> b <Plug>CamelCaseMotion_b
+"map <silent> e <Plug>CamelCaseMotion_e
+"map <silent> ge <Plug>CamelCaseMotion_ge
+"sunmap w
+"sunmap b
+"sunmap e
+"sunmap ge
+
