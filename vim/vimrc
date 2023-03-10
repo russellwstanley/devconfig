@@ -11,13 +11,6 @@ filetype indent on
 let g:completer_python_binary = '/usr/local/lib/python2.7/'
 let g:completer_node_binary = 'usr/local/bin/node'
 
-" moving lines
-nnoremap <Down> :m .+1<CR>==
-nnoremap <Up> :m .-2<CR>==
-inoremap <Down> <Esc>:m .+1<CR>==gi
-inoremap <Up> <Esc>:m .-2<CR>==gi
-vnoremap <Down> :m '>+1<CR>gv=gv
-vnoremap <Up> :m '<-2<CR>gv=gv
 
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -25,7 +18,9 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 
-colorscheme badwolf
+packadd! dracula
+syntax enable
+colorscheme dracula
 
 set incsearch
 
@@ -35,6 +30,7 @@ set smartindent
 set tabstop=4 
 set shiftwidth=4 
 set expandtab
+set laststatus=2
 
 set smartcase
 
@@ -42,7 +38,7 @@ set smartcase
 set runtimepath^=~/.vim/pack/start/ctrlp.vim
 set wildignore+=**/*.git,**/*.class,**/*.pyc,**/*.swp,**/*jar,**/*.zip
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'rw'
+let g:ctrlp_working_path_mode = 0
 map <C-b> :CtrlPBuffer<CR>
 map <C-d> :CtrlPDir<CR>
 let g:ctrlp_extensions = [ 'dir','line']
@@ -58,7 +54,7 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-
+let g:ctrlp_use_caching = 0
 
 " yaml indentation
 au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
@@ -87,4 +83,31 @@ let g:markdown_enable_folding = 1
 
 nmap <leader>d I<C-v>u2714 <ESC>
 nmap <leader>x I<C-v>u2716 <ESC>
+
+" Default to not read-only in vimdiff
+set noro
+
+
+nnoremap <leader>f :SideSearch<SPACE>
+
+let g:vimwiki_list = [{'path': '~/Dropbox/notes', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_ext2syntax = {'.md' : 'markdown'}
+
+let g:vimwiki_markdown_link_ext = 1
+
+set omnifunc=syntaxcomplete#Complete
+
+nnoremap <leader>e :Explore <CR><SPACE>
+
+
+
+" camelcasemotion
+"map <silent> w <Plug>CamelCaseMotion_w
+"map <silent> b <Plug>CamelCaseMotion_b
+"map <silent> e <Plug>CamelCaseMotion_e
+"map <silent> ge <Plug>CamelCaseMotion_ge
+"sunmap w
+"sunmap b
+"sunmap e
+"sunmap ge
 
