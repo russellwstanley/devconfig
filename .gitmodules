@@ -43,3 +43,6 @@
 [submodule "vim/vim/pack/default/start/vim-side-search"]
 	path = vim/vim/pack/default/start/vim-side-search
 	url = https://github.com/ddrscott/vim-side-search.git
+[submodule "vim/vim/pack/default/start/completor.vim"]
+	path = vim/vim/pack/default/start/completor.vim
+	url = https://github.com/maralla/completor.vim.git

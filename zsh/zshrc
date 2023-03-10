@@ -142,6 +142,9 @@ alias gprt="make m.typecheck && gpr"
 alias todo="vim ~/Dropbox/todo.md"
 alias worklog="vim ~/Dropbox/worklog.md"
 alias repo="cd /home/russell/code/monorepo"
+alias wip="gcm russell wip"
+alias tc="dmypy run ."
+alias terraform_target_plan="terraform plan | grep 'updated\|created\|destroyed'"
 
 
 
