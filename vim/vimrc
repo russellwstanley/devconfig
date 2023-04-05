@@ -99,7 +99,15 @@ set omnifunc=syntaxcomplete#Complete
 
 nnoremap <leader>e :Explore <CR><SPACE>
 
+set directory=$HOME/.vim/swapfiles//
 
+" sidesearch root dir as current working dir
+function! FindRootDirectory()
+  return getcwd()
+endfunction
+
+" \ cd to change dir to working file
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " camelcasemotion
 "map <silent> w <Plug>CamelCaseMotion_w
